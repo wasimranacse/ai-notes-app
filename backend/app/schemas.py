@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List
+# from typing import List
 
 class NoteCreate(BaseModel):
     title: str = Field(..., min_length=1, description="Title cannot be empty")
@@ -10,3 +10,4 @@ class NoteResponse(NoteCreate):
 
     class Config:
         orm_mode = True  # Allows ORM models to be converted to Pydantic models
+    
