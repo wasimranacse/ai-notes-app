@@ -1,34 +1,48 @@
-# ai-notes-app
-
-# AI-Powered Notes Application
+# Local AI-Powered Notes Application
 
 A full-stack note-taking app with sentiment analysis powered by NLP.
 
+# AI-Powered Notes App
+
+A FastAPI-based notes application with sentiment analysis.
+
 ## Features
+- Secure API with API Key Authentication 
+- Create and fetch notes
+- Sentiment analysis on notes
+- SQLite database
+- Dockerized application
 
-- Create, view, and analyze notes
-- JWT authentication
-- Sentiment analysis (positive/neutral/negative)
-- React frontend
-- Dockerized deployment
-- CI/CD pipeline
+## Installation
 
-## Technologies
+### 1. Clone the Repository
+```sh
+git clone https://github.com/yourusername/ai-notes-app.git
+cd ai-notes-app/backend
 
-- **Backend**: Python, FastAPI, SQLite
-- **Frontend**: React, Material-UI
-- **NLP**: TextBlob
-- **DevOps**: Docker, GitHub Actions
+### 2. Install Dependencies
+```sh
+pip install -r requirements.txt
 
-## Setup
+### 3. Run the Server
+```sh
+uvicorn app.main:app --reload
 
-### Prerequisites
+### 4. Run Tests
+```sh
+cd backend
+pytest tests/test_auth.py
 
-- Docker and Docker Compose
-- Python 3.9+
-- Node.js 16+
+# Docker Setup
 
-### Running with Docker
+docker build -t ai-notes-app .
+docker run -d -p 8000:8000 ai-notes-app
 
-```bash
-docker-compose up --build
+# API Endpoints
+
+Method	Endpoint	Description
+POST	/notes/	Create a new note
+GET	/notes/	Get all notes
+GET	/notes/{id}/analyze	Analyze sentiment
+
+# License - MIT

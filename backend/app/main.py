@@ -2,10 +2,10 @@ from fastapi import FastAPI, HTTPException, Depends, status
 from sqlalchemy.orm import Session
 from database import SessionLocal, engine, Base
 from models import Note
-from schemas import NoteCreate
+from schemas import NoteCreate, NoteResponse
 from typing import List
-from schemas import NoteResponse  
 from sentiment import analyze_sentiment
+from auth import validate_api_key
 
 
 app = FastAPI()
@@ -21,17 +21,13 @@ def get_db():
     finally:
         db.close()
 
+
 @app.get("/")
 def welcome_message():
     return {"message": "Welcome to the Notes AI"}
 
-@app.get("/notes/", response_model=List[NoteResponse])
-def get_notes(db: Session = Depends(get_db)):
-    notes = db.query(Note).all()
-    return notes
 
-
-@app.post("/notes/", response_model=NoteResponse)
+@app.post("/notes/", response_model=NoteResponse, dependencies=[Depends(validate_api_key)])
 def create_note(note: NoteCreate, db: Session = Depends(get_db)):
     try:
         # Create a new note and store it in the database.
@@ -49,6 +45,11 @@ def create_note(note: NoteCreate, db: Session = Depends(get_db)):
     except Exception as e:
         # Handle any errors
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))
+    
+@app.get("/notes/", response_model=List[NoteResponse], dependencies=[Depends(validate_api_key)])
+def get_notes(db: Session = Depends(get_db)):
+    notes = db.query(Note).all()
+    return notes
 
 
 @app.get("/notes/{note_id}/analyze")
