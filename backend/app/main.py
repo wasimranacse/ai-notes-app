@@ -7,7 +7,6 @@ from typing import List
 from sentiment import analyze_sentiment
 from auth import validate_api_key
 
-
 app = FastAPI()
 
 # Create tables in the database
@@ -21,11 +20,9 @@ def get_db():
     finally:
         db.close()
 
-
 @app.get("/")
 def welcome_message():
     return {"message": "Welcome to the Notes AI"}
-
 
 @app.post("/notes/", response_model=NoteResponse, dependencies=[Depends(validate_api_key)])
 def create_note(note: NoteCreate, db: Session = Depends(get_db)):
@@ -50,7 +47,6 @@ def create_note(note: NoteCreate, db: Session = Depends(get_db)):
 def get_notes(db: Session = Depends(get_db)):
     notes = db.query(Note).all()
     return notes
-
 
 @app.get("/notes/{note_id}/analyze")
 def analyze_note_sentiment(note_id: int, db: Session = Depends(get_db)):

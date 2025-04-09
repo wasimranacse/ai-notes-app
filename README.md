@@ -10,6 +10,26 @@ A FastAPI-based notes application with sentiment analysis.
 - SQLite database - Store all the notes
 - Dockerized application 
 
+## Technologies Used
+
+- Python 3.12
+- FastAPI
+- SQLite Database
+- SQLAlchemy
+- Pydantic
+- Pytest (for testing)
+
+## Prerequisites
+
+1. Python 3.12+
+2. MySQL Server
+3. Install necessary Python libraries with pip:
+4. Docker Desktop
+
+## Authentication Key
+
+X-API-KEY: local123987@1122!
+
 ## Installation
 ```sh
 ### 1. Clone the Repository
