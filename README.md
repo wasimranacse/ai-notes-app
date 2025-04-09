@@ -43,7 +43,8 @@ pip install -r requirements.txt
 
 ### 3. Run the Server
 ```sh
-uvicorn app.main:app --reload
+cd ai-notes-app/backend/app
+uvicorn main:app --reload
 
 ### 4. Run Tests
 ```sh
