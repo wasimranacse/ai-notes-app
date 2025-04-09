@@ -10,27 +10,27 @@ A FastAPI-based notes application with sentiment analysis.
 - Dockerized application
 
 ## Installation
-
+```sh
 ### 1. Clone the Repository
-
+```sh
 git clone https://github.com/yourusername/ai-notes-app.git
 cd ai-notes-app/backend
 
 ### 2. Install Dependencies
-
+```sh
 pip install -r requirements.txt
 
 ### 3. Run the Server
-
+```sh
 uvicorn app.main:app --reload
 
 ### 4. Run Tests
-
-cd backend
+```sh
+cd backend 
 pytest tests/test_auth.py
 
 # Docker Setup
-
+```sh
 docker build -t ai-notes-app .
 docker run -d -p 8000:8000 ai-notes-app
 
