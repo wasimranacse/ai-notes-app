@@ -26,7 +26,7 @@ A FastAPI-based notes application with sentiment analysis.
 3. Install necessary Python libraries with pip:
 4. Docker Desktop
 
-## Authentication Key
+## Available Authorizations
 
 X-API-KEY: local123987@1122!
 
