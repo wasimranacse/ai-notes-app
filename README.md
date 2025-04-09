@@ -25,6 +25,7 @@ A FastAPI-based notes application with sentiment analysis.
 2. MySQL Server
 3. Install necessary Python libraries with pip:
 4. Docker Desktop
+5. Visual Studio Code or any other IDE
 
 ## Available Authorizations
 
