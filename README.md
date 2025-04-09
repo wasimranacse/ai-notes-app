@@ -1,9 +1,5 @@
 # Local AI-Powered Notes Application
 
-A full-stack note-taking app with sentiment analysis powered by NLP.
-
-# AI-Powered Notes App
-
 A FastAPI-based notes application with sentiment analysis.
 
 ## Features
@@ -16,7 +12,7 @@ A FastAPI-based notes application with sentiment analysis.
 ## Installation
 
 ### 1. Clone the Repository
-```sh
+
 git clone https://github.com/yourusername/ai-notes-app.git
 cd ai-notes-app/backend
 
@@ -45,4 +41,4 @@ POST	/notes/	Create a new note
 GET	/notes/	Get all notes
 GET	/notes/{id}/analyze	Analyze sentiment
 
-# License - MIT
+# License - MIT - 0.1
