@@ -21,15 +21,15 @@ git clone https://github.com/yourusername/ai-notes-app.git
 cd ai-notes-app/backend
 
 ### 2. Install Dependencies
-```sh
+
 pip install -r requirements.txt
 
 ### 3. Run the Server
-```sh
+
 uvicorn app.main:app --reload
 
 ### 4. Run Tests
-```sh
+
 cd backend
 pytest tests/test_auth.py
 
