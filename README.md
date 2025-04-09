@@ -4,10 +4,11 @@ A FastAPI-based notes application with sentiment analysis.
 
 ## Features
 - Secure API with API Key Authentication 
-- Create and fetch notes
+- Create notes
+- List of all the notes
 - Sentiment analysis on notes
-- SQLite database
-- Dockerized application
+- SQLite database - Store all the notes
+- Dockerized application 
 
 ## Installation
 ```sh
